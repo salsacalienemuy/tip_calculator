@@ -1,0 +1,23 @@
+<html ng-app="TipCalculator">
+	<head>
+		<title>Tip Calculator</title>
+	</head>
+	<body>
+		<h1>Tip Calculator</h1>
+		<p>Meal Cost</p>
+		<div ng-controller="TipCalculatorController as ucc">
+			<input type="text" ng-model="ucc.lengthValue" id="Length_value" name="VALUE" placeholder="Enter amount">
+            <p>Tip Amount</p>
+            <select ng-model="ucc.selected_tip_amount" 
+                    ng-options="amount.amount_name for unit in ucc.tip_amount" 
+                    ng-change="ucc.showTipAmount()"></select>
+			
+			<!--<select>-->
+			<div>
+				<p>Selected tip is: <span ng-bind="ucc.selected_metric_volume_unit.unit_name"></span></p>
+			</div>
+		</div>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>	
+	</body>
+</html>
